@@ -24,19 +24,11 @@ const Index = () => {
         <>
             <Head title='LoukHin'>
                 <link rel='preconnect' href='https://fonts.googleapis.com' />
-                <link rel='preconnect' href='https://cdn.jsdelivr.net' />
-                <link rel='preconnect' href='https://use.fontawesome.com' />
                 <link
                     rel='preload'
                     as='style'
                     onLoad="this.onload=null; this.rel='stylesheet'"
                     href='https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap&subset=thai'
-                />
-                <link
-                    rel='preload'
-                    as='style'
-                    onLoad="this.onload=null; this.rel='stylesheet'"
-                    href='https://use.fontawesome.com/releases/v5.0.4/css/all.css'
                 />
             </Head>
             <div className='container mx-auto my-20 xl:w-2/3 flex flex-row flex-wrap p-2'>
