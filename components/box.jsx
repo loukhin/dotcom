@@ -18,7 +18,7 @@ const Box = (props) => {
 
     return (
         <div className={`relative ${color} m-2 flex-shrink ${getSize()}`}>
-            <div className={`absolute inset-0 p-${props.size === 'small' ? '3' : '4'} overflow-hidden ${props.className || ''}`}>
+            <div className={`absolute inset-0 ${props.size === 'small' ? 'p-3' : 'p-4'} overflow-hidden ${props.className || ''}`}>
                 {props.children}
             </div>
         </div>
