@@ -13,6 +13,7 @@ const Index = () => {
     }
 
     useEffect(() => {
+        resizeHandler()
         window.addEventListener('resize', resizeHandler)
 
         return () => {
@@ -27,7 +28,10 @@ const Index = () => {
                 <link
                     rel='preload'
                     as='style'
-                    onLoad="this.onload=null; this.rel='stylesheet'"
+                    href='https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap&subset=thai'
+                />
+                <link
+                    rel='stylesheet'
                     href='https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap&subset=thai'
                 />
             </Head>
@@ -44,7 +48,17 @@ const Index = () => {
                     </div>
                 </div>
                 <Box color='white' width='full'>มีหัวไหม</Box>
-                <Box color='white' width='1/2'>aaa</Box>
+                <Box color='white' width='1/2'>
+                    <Emote name='rabbitFoot' size={8} />
+                    <Emote name='rabbitFoot' size={8} />
+                    <Emote name='rabbitFoot' size={8} />
+                    <Emote name='rabbitFoot' size={8} />
+                    <Emote name='rabbitFoot' size={8} />
+                    <Emote name='rabbitFoot' size={8} />
+                    <Emote name='rabbitFoot' size={8} />
+                    <Emote name='rabbitFoot' size={8} />
+                    <Emote name='rabbitFoot' size={8} />
+                </Box>
                 <Box color='white' width='1/2'>aaa</Box> */}
             </div>
             <style jsx global>{`
