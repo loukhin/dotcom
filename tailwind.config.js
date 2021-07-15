@@ -1,6 +1,6 @@
 module.exports = {
     purge: {
-        content: ['./components/*.jsx', './pages/*.jsx', './out/index.html'],
+        content: ['./components/*.tsx', './pages/*.tsx', './out/index.html'],
         options: {
             safelist: [/^bg-/, /^w-/, /^h-/]
         }
