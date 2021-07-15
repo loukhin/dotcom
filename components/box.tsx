@@ -1,4 +1,11 @@
-const Box = (props) => {
+interface Props {
+    className?: string
+    color?: string
+    size?: string
+    width: string
+}
+
+const Box: React.FC<Props> = (props) => {
     const color = props.color ? `bg-${props.color}` : ''
 
     const getSize = () => {

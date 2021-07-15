@@ -1,12 +1,19 @@
 import NextHead from 'next/head'
-import { string } from 'prop-types'
 
 const defaultDescription = "LoukHin, LoukHin everywhere"
 const defaultKeywords = 'LoukHin'
 const defaultOGURL = 'https://loukhin.com'
 const defaultOGImage = `${defaultOGURL}/favicon_256x256.png`
 
-const Head = (props) => (
+interface Props {
+    title?: string
+    description?: string
+    keywords?: string
+    url?: string
+    ogImage?: string
+}
+
+const Head: React.FC<Props> = (props) => (
     <NextHead>
         <meta charSet='UTF-8' />
         <title>{props.title || ''}</title>
@@ -32,13 +39,5 @@ const Head = (props) => (
         {props.children}
     </NextHead>
 )
-
-Head.propTypes = {
-    title: string,
-    description: string,
-    keywords: string,
-    url: string,
-    ogImage: string,
-}
 
 export default Head
