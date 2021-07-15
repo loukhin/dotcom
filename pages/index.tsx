@@ -39,7 +39,7 @@ const Index = () => {
                 <Box color='white' width='square' className='text-5xl sm:text-8xl font-bold flex flex-wrap content-end'>
                     <span className='transparent'>{logoText} <Emote name='rabbitFoot' /></span>
                 </Box>
-                <div className='flex flex-grow justify-end w-full md:w-auto'>
+                {/* <div className='flex flex-grow justify-end w-full md:w-auto'>
                     <div className='flex flex-row flex-wrap w-full md:w-56 lg:w-full justify-end md:content-end'>
                         <Box color='white' size='small' width='square' className='justify-center flex-col flex text-center'>Facebook</Box>
                         <Box color='white' size='small' width='square' className='justify-center flex-col flex text-center'>2</Box>
@@ -59,7 +59,7 @@ const Index = () => {
                     <Emote name='rabbitFoot' size={8} />
                     <Emote name='rabbitFoot' size={8} />
                 </Box>
-                <Box color='white' width='1/2'>aaa</Box>
+                <Box color='white' width='1/2'>aaa</Box> */}
             </div>
             <style jsx global>{`
                 span.transparent {
