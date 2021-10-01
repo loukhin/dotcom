@@ -50,7 +50,7 @@ const Index = () => {
                         <div className='flex flex-row flex-wrap w-full md:w-56 lg:w-full justify-end content-end'>
                             <a
                                 href='https://github.com/LoukHin'
-                                className='flex w-full justify-end content-end'
+                                className='flex justify-end content-end'
                             >
                                 <Box
                                     color='white'
