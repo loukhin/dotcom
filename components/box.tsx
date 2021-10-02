@@ -35,7 +35,7 @@ const Box: React.FC<Props> = (props) => {
             return `w-full lg:w-flex-1/2 h-${size}`
         }
 
-        return `w-full sm:w-flex-${props.width} h-${size}`
+        return `w-full ${props.width} h-${size}`
     }
 
     return (

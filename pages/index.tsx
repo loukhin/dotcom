@@ -116,7 +116,7 @@ const Index = () => {
                         </Box>
                     </div>
                 </div>
-                <Box color='white' width='2/3'>
+                <Box color='white' width='md:w-flex-2/3'>
                     <span className='block text-xl font-bold mb-2'>
                         Public project i've done so far
                     </span>
@@ -129,7 +129,7 @@ const Index = () => {
                         </span>
                     ))}
                 </Box>
-                <Box color='white' width='1/3'>
+                <Box color='white' width='md:w-flex-1/3'>
                     <span className='block text-xl font-bold mb-2'>Neighbor</span>
                     {neighbor.map(({ url, name }, index) => (
                         <span key={`url-${index}`}>
