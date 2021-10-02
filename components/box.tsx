@@ -14,14 +14,14 @@ const Box: React.FC<Props> = (props) => {
 
         if (props.width === 'square') {
             if (props.size === 'small') {
-                return `w-flex-1/2 pt-flex-1/2 sm:p-0 sm:w-24 h-0 sm:h-24`
+                return `w-flex-1/3 pt-flex-1/3 sm:p-0 sm:w-24 h-0 sm:h-24`
             }
             return `w-flex-1/2 pt-flex-1/2 md:p-0 md:w-80 h-0 md:h-80`
         } else if (props.width === '1/2') {
             return `w-full lg:w-flex-1/2 h-${size}`
         }
 
-        return `w-${props.width} h-${size}`
+        return `w-full sm:w-flex-${props.width} h-${size}`
     }
 
     return (
