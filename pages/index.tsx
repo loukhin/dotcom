@@ -53,7 +53,7 @@ const Index = () => {
             name: 'Golftopia'
         },
         {
-            url: 'https://iamkanz.com',
+            url: 'http://iamkanz.com',
             name: 'KanSAD'
         },
         {
