@@ -1,9 +1,23 @@
+import React from "react"
+
 interface Props {
     parentClassName?: string
     className?: string
+    as?: keyof JSX.IntrinsicElements
+    href?: string
     color?: string
     size?: string
     width: string
+}
+
+interface RootProps {
+    className?: string
+    href?: string
+    as?: keyof JSX.IntrinsicElements
+}
+
+const RootComponent: React.FC<RootProps> = (props) => {
+    return React.createElement(props.as || 'div', props)
 }
 
 const Box: React.FC<Props> = (props) => {
@@ -25,11 +39,11 @@ const Box: React.FC<Props> = (props) => {
     }
 
     return (
-        <div className={`relative ${color} m-2 flex-shrink ${getSize()} ${props.parentClassName || ''}`}>
+        <RootComponent as={props.as} href={props.href} className={`relative ${color} m-2 flex-shrink ${getSize()} ${props.parentClassName || ''}`}>
             <div className={`absolute inset-0 ${props.size === 'small' ? 'p-2 sm:p-3' : 'p-3 sm:p-4'} overflow-hidden ${props.className || ''}`}>
                 {props.children}
             </div>
-        </div>
+        </RootComponent>
     )
 }
 
