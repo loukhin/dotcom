@@ -104,10 +104,10 @@ const Index = () => {
                             as='a'
                             href='https://github.com/LoukHin'
                             className='justify-center items-center flex text-center text-sm sm:text-base cursor-pointer'
-                            parentClassName='transform hover:-translate-y-1 hover:translate-x-1 duration-100'
+                            parentClassName='transform hover:-translate-y-1 hover:translate-x-1 text-yellow-400 hover:text-gray-800 duration-100'
                         >
                             <svg
-                                className='w-10 h-10 text-gray-800'
+                                className='w-10 h-10'
                                 fill='currentColor'
                                 viewBox='0 -3 256 253'
                             >
