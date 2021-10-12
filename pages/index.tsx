@@ -4,6 +4,11 @@ import Box from '../components/box'
 import Emote from '../components/emote'
 import Head from '../components/head'
 
+interface Url {
+    url: string
+    name: string
+}
+
 const Index = () => {
     const [logoText, setLogoText] = useState('Louk Hin')
 
@@ -12,7 +17,16 @@ const Index = () => {
         setLogoText('LkH')
     }
 
-    const publicProject = [
+    const shuffleArray = (array: Url[]) => {
+        let shuffledArray = [...array]
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        }
+        return shuffledArray
+    }
+
+    const publicProject: Url[] = [
         {
             url: 'https://app.loukhin.com/musagi',
             name: 'Musagi'
@@ -39,7 +53,7 @@ const Index = () => {
         }
     ]
 
-    const neighbor = [
+    const neighbor: Url[] = [
         {
             url: 'https://tanssw.com',
             name: 'TANSSW'
@@ -131,7 +145,7 @@ const Index = () => {
                 </Box>
                 <Box color='white' width='md:w-flex-1/3'>
                     <span className='block text-xl font-bold mb-2'>Neighbor</span>
-                    {neighbor.map(({ url, name }, index) => (
+                    {shuffleArray(neighbor).map(({ url, name }, index) => (
                         <span key={`url-${index}`}>
                             <a href={url} className='hover:text-yellow-400 duration-100'>
                                 {name}
