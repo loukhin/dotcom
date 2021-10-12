@@ -17,15 +17,6 @@ const Index = () => {
         setLogoText('LkH')
     }
 
-    const shuffleArray = (array: Url[]) => {
-        let shuffledArray = [...array]
-        for (let i = shuffledArray.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-        }
-        return shuffledArray
-    }
-
     const publicProject: Url[] = [
         {
             url: 'https://app.loukhin.com/musagi',
@@ -145,7 +136,7 @@ const Index = () => {
                 </Box>
                 <Box color='white' width='md:w-flex-1/3'>
                     <span className='block text-xl font-bold mb-2'>Neighbor</span>
-                    {shuffleArray(neighbor).map(({ url, name }, index) => (
+                    {neighbor.map(({ url, name }, index) => (
                         <span key={`url-${index}`}>
                             <a href={url} className='hover:text-yellow-400 duration-100'>
                                 {name}
