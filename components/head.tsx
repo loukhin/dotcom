@@ -4,6 +4,7 @@ const defaultDescription = "LoukHin, LoukHin everywhere"
 const defaultKeywords = 'LoukHin'
 const defaultOGURL = 'https://loukhin.com'
 const defaultOGImage = `${defaultOGURL}/favicon_256x256.png`
+const defaultThemeColor = `hsl(45, 97%, 50%)`
 
 interface Props {
     title?: string
@@ -11,6 +12,7 @@ interface Props {
     keywords?: string
     url?: string
     ogImage?: string
+    themeColor?: string
 }
 
 const Head: React.FC<Props> = (props) => (
@@ -20,6 +22,7 @@ const Head: React.FC<Props> = (props) => (
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='description' content={props.description || defaultDescription} />
         <meta name='keywords' content={props.keywords || defaultKeywords} />
+        <meta name='theme-color' content={props.themeColor || defaultThemeColor} />
         <meta property='og:url' content={props.url || defaultOGURL} />
         <meta property='og:title' content={props.title || ''} />
         <meta property='og:description' content={props.description || defaultDescription} />

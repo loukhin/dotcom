@@ -70,15 +70,29 @@ const Index = () => {
     useEffect(() => {
         resizeHandler()
         window.addEventListener('resize', resizeHandler)
+        let i = 450
+        const breathInterval = setInterval(() => {
+            const hue = ++i / 10  % 360
+            document.querySelector('meta[name="theme-color"]')?.setAttribute('content', `hsl(${hue}, 87%, 50%)`)
+            const transElement = document.querySelectorAll<HTMLElement>('.transparent')
+            const transTextElement = document.querySelectorAll<HTMLElement>('.transparent-text')
+            if (transElement) transElement.forEach((ele) => {
+                ele.style.backgroundColor = `hsl(${hue}, 97%, 50%)`
+            })
+            if (transTextElement) transTextElement.forEach((ele) => {
+                ele.style.color = `hsl(${hue}, 97%, 50%)`
+            })
+        }, 500)
 
         return () => {
             window.removeEventListener('resize', resizeHandler)
+            clearInterval(breathInterval)
         }
     }, [])
 
     return (
         <>
-            <Head title='LoukHin'>
+            <Head title='LoukHin' themeColor='hsl(45, 87%, 50%)'>
                 <link rel='preconnect' href='https://fonts.googleapis.com' />
                 <link
                     rel='preload'
@@ -109,10 +123,10 @@ const Index = () => {
                             as='a'
                             href='https://github.com/LoukHin'
                             className='justify-center items-center flex text-center text-sm sm:text-base cursor-pointer'
-                            parentClassName='transform hover:-translate-y-1 hover:translate-x-1 text-yellow-400 hover:text-gray-800 duration-100'
+                            parentClassName='transform hover:-translate-y-1 hover:translate-x-1 hover:text-gray-800 duration-100'
                         >
                             <svg
-                                className='w-10 h-10'
+                                className='w-10 h-10 transparent-text'
                                 fill='currentColor'
                                 viewBox='0 -3 256 253'
                             >
@@ -152,6 +166,12 @@ const Index = () => {
                     background-image: url('/background.svg');
                     background-attachment: fixed;
                     color: #0000;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                }
+                svg.transparent-text {
+                    background-image: url('/background.svg');
+                    background-attachment: fixed;
                     background-clip: text;
                     -webkit-background-clip: text;
                 }
