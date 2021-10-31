@@ -71,22 +71,16 @@ const Index = () => {
         resizeHandler()
         window.addEventListener('resize', resizeHandler)
         let i = 450
-        const breathInterval = setInterval(() => {
+        const rainbowInterval = setInterval(() => {
             const hue = ++i / 10  % 360
             document.querySelector('meta[name="theme-color"]')?.setAttribute('content', `hsl(${hue}, 87%, 50%)`)
-            const transElement = document.querySelectorAll<HTMLElement>('.transparent')
-            const transTextElement = document.querySelectorAll<HTMLElement>('.transparent-text')
-            if (transElement) transElement.forEach((ele) => {
-                ele.style.backgroundColor = `hsl(${hue}, 97%, 50%)`
-            })
-            if (transTextElement) transTextElement.forEach((ele) => {
-                ele.style.color = `hsl(${hue}, 97%, 50%)`
-            })
+            const body = document.querySelector('body')
+            if (body) body.style.setProperty('--rainbow', `hsl(${hue}, 97%, 50%)`)
         }, 500)
 
         return () => {
             window.removeEventListener('resize', resizeHandler)
-            clearInterval(breathInterval)
+            clearInterval(rainbowInterval)
         }
     }, [])
 
@@ -111,7 +105,7 @@ const Index = () => {
                         width='square'
                         className='text-4xl sm:text-8xl font-bold flex flex-wrap content-end'
                     >
-                        <span className='transparent'>
+                        <span className='rainbow'>
                             {logoText} <Emote name='rabbitFoot' />
                         </span>
                     </Box>
@@ -126,7 +120,7 @@ const Index = () => {
                             parentClassName='transform hover:-translate-y-1 hover:translate-x-1 hover:text-gray-800 duration-100'
                         >
                             <svg
-                                className='w-10 h-10 transparent-text'
+                                className='w-10 h-10 rainbow-fill'
                                 fill='currentColor'
                                 viewBox='0 -3 256 253'
                             >
@@ -141,7 +135,7 @@ const Index = () => {
                     </span>
                     {publicProject.map(({ url, name }, index) => (
                         <span key={`url-${index}`}>
-                            <a href={url} className='hover:text-yellow-400 duration-100'>
+                            <a href={url} className='hover:rainbow-highlight duration-100'>
                                 {name}
                             </a>
                             {index + 1 !== publicProject.length && ' • '}
@@ -152,7 +146,7 @@ const Index = () => {
                     <span className='block text-xl font-bold mb-2'>Neighbor</span>
                     {neighbor.map(({ url, name }, index) => (
                         <span key={`url-${index}`}>
-                            <a href={url} className='hover:text-yellow-400 duration-100'>
+                            <a href={url} className='hover:rainbow-highlight duration-100'>
                                 {name}
                             </a>
                             {index + 1 !== neighbor.length && ' • '}
@@ -161,23 +155,32 @@ const Index = () => {
                 </Box>
             </div>
             <style jsx global>{`
-                span.transparent {
-                    background-color: #fabc05;
+                span.rainbow {
+                    background-color: var(--rainbow);
                     background-image: url('/background.svg');
                     background-attachment: fixed;
                     color: #0000;
                     background-clip: text;
                     -webkit-background-clip: text;
                 }
-                svg.transparent-text {
-                    background-image: url('/background.svg');
-                    background-attachment: fixed;
-                    background-clip: text;
-                    -webkit-background-clip: text;
+                a.hover\:rainbow-highlight {
+                    position: relative;
+                    top: 0;
+                    border-bottom-width: 0px;
+                    border-bottom-style: solid;
+                    border-bottom-color: var(--rainbow);
+                    will-change: top, border-bottom-width;
+                }
+                a.hover\:rainbow-highlight:hover {
+                    top: -4px;
+                    border-bottom-width: 4px;
+                }
+                svg.rainbow-fill {
+                    color: var(--rainbow);
                 }
                 body {
                     font-family: 'Bai Jamjuree';
-                    background-color: #fabc05;
+                    background-color: var(--rainbow);
                     background-image: url('/background.svg');
                     background-attachment: fixed;
                     overflow: hidden;
