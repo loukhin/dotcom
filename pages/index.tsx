@@ -86,7 +86,7 @@ const Index = () => {
 
     return (
         <>
-            <Head title='LoukHin' themeColor='hsl(45, 87%, 50%)'>
+            <Head title='LoukHin'>
                 <link rel='preconnect' href='https://fonts.googleapis.com' />
                 <link
                     rel='preload'
