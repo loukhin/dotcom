@@ -179,6 +179,7 @@ const Index = () => {
                     color: var(--rainbow);
                 }
                 body {
+                    --rainbow: hsl(45, 97%, 50%);
                     font-family: 'Bai Jamjuree';
                     background-color: var(--rainbow);
                     background-image: url('/background.svg');
