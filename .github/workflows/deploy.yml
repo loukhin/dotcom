@@ -26,7 +26,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v2.2.11
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "--exclude=0x4c -avzrO --chmod=D0775,F664 --delete"
+          ARGS: "--exclude=0x4c --exclude=__portfolio.html -avzrO --chmod=D0775,F664 --delete"
           SOURCE: "out/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
