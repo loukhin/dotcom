@@ -60,10 +60,6 @@ const Index = () => {
         {
             url: 'https://iamkanz.com',
             name: 'KanSAD'
-        },
-        {
-            url: 'https://exam.loukhin.com.nopdon.tanssw.com.iamkanz.ktnis.me',
-            name: 'บางละเมียด'
         }
     ]
 
