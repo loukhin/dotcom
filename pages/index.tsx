@@ -66,17 +66,9 @@ const Index = () => {
     useEffect(() => {
         resizeHandler()
         window.addEventListener('resize', resizeHandler)
-        let i = 450
-        const rainbowInterval = setInterval(() => {
-            const hue = ++i / 10  % 360
-            document.querySelector('meta[name="theme-color"]')?.setAttribute('content', `hsl(${hue}, 87%, 50%)`)
-            const body = document.querySelector('body')
-            if (body) body.style.setProperty('--rainbow', `hsl(${hue}, 97%, 50%)`)
-        }, 500)
 
         return () => {
             window.removeEventListener('resize', resizeHandler)
-            clearInterval(rainbowInterval)
         }
     }, [])
 
@@ -101,7 +93,7 @@ const Index = () => {
                         width='square'
                         className='text-4xl sm:text-8xl font-bold flex flex-wrap content-end'
                     >
-                        <span className='rainbow'>
+                        <span className='accent'>
                             {logoText} <Emote name='rabbitFoot' />
                         </span>
                     </Box>
@@ -116,7 +108,7 @@ const Index = () => {
                             parentClassName='transform hover:-translate-y-1 hover:translate-x-1 hover:text-gray-800 duration-100'
                         >
                             <svg
-                                className='w-10 h-10 rainbow-fill'
+                                className='w-10 h-10 accent-fill'
                                 fill='currentColor'
                                 viewBox='0 -3 256 253'
                             >
@@ -131,7 +123,7 @@ const Index = () => {
                     </span>
                     {publicProject.map(({ url, name }, index) => (
                         <span key={`url-${index}`}>
-                            <a href={url} className='hover:rainbow-highlight duration-100'>
+                            <a href={url} className='hover:accent-highlight duration-100'>
                                 {name}
                             </a>
                             {index + 1 !== publicProject.length && ' • '}
@@ -142,7 +134,7 @@ const Index = () => {
                     <span className='block text-xl font-bold mb-2'>Neighbor</span>
                     {neighbor.map(({ url, name }, index) => (
                         <span key={`url-${index}`}>
-                            <a href={url} className='hover:rainbow-highlight duration-100'>
+                            <a href={url} className='hover:accent-highlight duration-100'>
                                 {name}
                             </a>
                             {index + 1 !== neighbor.length && ' • '}
@@ -151,33 +143,33 @@ const Index = () => {
                 </Box>
             </div>
             <style jsx global>{`
-                span.rainbow {
-                    background-color: var(--rainbow);
+                span.accent {
+                    background-color: var(--accent);
                     background-image: url('/background.svg');
                     background-attachment: fixed;
                     color: #0000;
                     background-clip: text;
                     -webkit-background-clip: text;
                 }
-                a.hover\:rainbow-highlight {
+                a.hover\:accent-highlight {
                     position: relative;
                     top: 0;
                     border-bottom-width: 0px;
                     border-bottom-style: solid;
-                    border-bottom-color: var(--rainbow);
+                    border-bottom-color: var(--accent);
                     will-change: top, border-bottom-width;
                 }
-                a.hover\:rainbow-highlight:hover {
+                a.hover\:accent-highlight:hover {
                     top: -4px;
                     border-bottom-width: 4px;
                 }
-                svg.rainbow-fill {
-                    color: var(--rainbow);
+                svg.accent-fill {
+                    color: var(--accent);
                 }
                 body {
-                    --rainbow: hsl(45, 97%, 50%);
+                    --accent: hsl(33, 20%, 78%);
                     font-family: 'Bai Jamjuree';
-                    background-color: var(--rainbow);
+                    background-color: var(--accent);
                     background-image: url('/background.svg');
                     background-attachment: fixed;
                     overflow: hidden;
