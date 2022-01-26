@@ -4,7 +4,7 @@ const defaultDescription = "LoukHin, LoukHin everywhere"
 const defaultKeywords = 'LoukHin'
 const defaultOGURL = 'https://loukhin.com'
 const defaultOGImage = `${defaultOGURL}/favicon_256x256.png`
-const defaultThemeColor = `hsl(45, 87%, 50%)`
+const defaultThemeColor = `hsl(33, 20%, 78%)`
 
 interface Props {
     title?: string
