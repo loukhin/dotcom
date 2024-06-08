@@ -14,6 +14,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        <script defer src="https://umami.loukhin.com/script.js" data-website-id="17b351f1-0cda-4931-8f69-a89f55b616e9"></script>
       </Html>
     )
   }
