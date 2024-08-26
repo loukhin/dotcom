@@ -1,5 +1,8 @@
-<center>
-<h1>homepage of endless nothingness</h1>
-
-:)
-</center>
+<h1>
+  <p align="center">
+   homepage of endless nothingness
+  </p>
+</h1>
+<p align="center">
+ :)
+</p>
